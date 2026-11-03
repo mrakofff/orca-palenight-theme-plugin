@@ -230,16 +230,19 @@ function checkTerminal(palette) {
 // --- run --------------------------------------------------------------------------------------
 
 const theme = readJson('themes/palenight.json')
+const manifestJson = readJson('orca-plugin.json')
+const terminalJson = readJson('terminal/palenight.json')
+
 const chat = deriveChat(theme.tokens)
 
 const errors = [
-  ...checkManifest(readJson('orca-plugin.json')),
+  ...checkManifest(manifestJson),
   ...checkTokenSyntax(theme.tokens),
   ...checkTextPairs(theme.tokens),
   ...checkAccentColors(theme.tokens),
   ...checkChat(theme.tokens, chat),
   ...checkCodeColors(theme),
-  ...checkTerminal(readJson('terminal/palenight.json').terminal),
+  ...checkTerminal(terminalJson.terminal),
 ]
 
 console.log(`chat canvas ${chat.canvas}, text ${chat.text}, strong ${chat.strong}, faint ${chat.faint}`)
