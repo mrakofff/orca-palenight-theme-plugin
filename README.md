@@ -24,6 +24,11 @@ colors, links and git-status colors on their surface, and 2:1 for the active-tab
 these Orca drops a value; for a failing text/surface pair it drops both colors, so a weak
 `--muted-foreground` also throws out `--background` and the app canvas turns Orca-default black. Git-status colors must be opaque, or Orca drops them too.
 
+Chat colors are derived by Orca from `--background`, `--foreground` and `--muted-foreground`
+(canvas = background + 5% foreground), so the check also verifies 4.5:1 for chat text on that derived
+canvas. `--background` is `#1B1F30` so the chat canvas (`#262A3A`) stays close to the editor's `#292D3E`
+while text keeps ~8.7:1 and secondary chat text ~4.8:1.
+
 ## Limits
 
 - Orca colors Monaco's built-in TypeScript/JavaScript tokenizer through a fixed token → scope map,
