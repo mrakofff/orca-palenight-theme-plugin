@@ -1,0 +1,30 @@
+{
+  "manifestVersion": 2,
+  "id": "palenight-theme",
+  "publisher": "mrakoff",
+  "name": "Palenight",
+  "version": "1.0.0",
+  "execution": "data",
+  "description": "Material Palenight: a dark app theme with matching editor code colors and terminal palette.",
+  "license": "MIT",
+  "engines": {
+    "orca": ">=1.4.245"
+  },
+  "contributes": {
+    "themes": [
+      {
+        "id": "palenight",
+        "title": "Palenight",
+        "path": "themes/palenight.json"
+      }
+    ],
+    "terminalThemes": [
+      {
+        "id": "palenight",
+        "title": "Palenight",
+        "path": "terminal/palenight.json"
+      }
+    ]
+  },
+  "capabilities": []
+}
